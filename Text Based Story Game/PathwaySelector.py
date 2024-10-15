@@ -1,9 +1,9 @@
 ﻿from ctypes.wintypes import ULONG
 from time import sleep
-from Pathway1 import *
-from Pathway2 import *
-from Pathway3 import *
+
 import random
+
+input("Press Enter to start the game")
 
 
 
@@ -16,7 +16,12 @@ print(R"""
 | || || |   | |      | |   | |      | (   ) |  | (   ) || |   | || | \   |   | |   
 | () () |___) (___   | |   | (____/\| )   ( |  | )   ( || (___) || )  \  |   | |   
 (_______)\_______/   )_(   (_______/|/     \|  |/     \|(_______)|/    )_)   )_(   
+Luck and choices
 """)
+
+
+print("\nYour luck, choices will decide your fate...")
+print("Once dead, you will have to restart,.. good luck..\n")
 
 skip = False
 import sys,time
@@ -26,7 +31,7 @@ def sprint(str):
    for c in str + '\n':
      sys.stdout.write(c)
      sys.stdout.flush()
-     time.sleep(0./90)
+     time.sleep(5./90)
 
 #beginning
 
@@ -112,16 +117,12 @@ There are many classes, but these are the base ones:
 Warrior
 Archer
 Mage
-Alchemist
-Rogue
-Dancer
-Dragoon
 """)
 print("\n")
 sprint('"These are all the base starting classes, after your class evolution you would be able to choose to evolve into a better version of your class for example:"')
-sprint('"A Warrior would be able to become a berserker. Other than that, Summoner, Lich, Ranger, Assassain, Necromancer, Jester, Enchanter, Dark Mage and Wizard are all just some of your Class opportunities"')
+sprint('"A Warrior would be able to become a berserker. There are other class evolutions such as Summoner, Lich, Ranger, Assassain, Necromancer, Jester, Enchanter, Dark Mage and Wizard are all just some of your Class opportunities"')
 print("\n")
-PlayerChosenClass = input('"Which path will you choose"\n') #the input is to make the game more interactive, but you will recieve hidden tamer class
+PlayerChosenClass = input('" Out of all the base classes ( Warrior, Archer, Mage ) Which path will you choose"\n') #the input is to make the game more interactive, but you will recieve hidden tamer class
 sleep(1)
 print('"',PlayerChosenClass,'...? Very well then, I shall do as you wish"')
 sprint('"Let us get on with the ritual"')
@@ -164,7 +165,7 @@ if IsHerbiaReallyThatBad == '1': # ur dead (become stuffed doll)
     sleep(1)
     sprint("You shall live for the rest of existence as so,... ")
     sleep(1)
-    sprint("and not even the udnerworld can save you")
+    sprint("and not even the underworld can save you")
     print("\n")
     print("\n")
     sleep(2)
@@ -260,7 +261,7 @@ sprint('"We are seperated for a while. Player, she is tricking you, do not fall 
 WouldYouLikeToFollowMeInstead = input ("""
 "Would you like to follow me instead"
 1 for "yes"
-2 for "Who are you... and why do you want "
+2 for "Who are you... and what do you want "
 3 for "no"
 """)
 if WouldYouLikeToFollowMeInstead == '1': #kills u
@@ -302,26 +303,27 @@ elif WouldYouLikeToFollowMeInstead == '2':
     sprint('"And someday.. they shall do the same to you"')
     sleep(1)
     print("\n")
-    sprint("Therefore, will you join the side that will bring the treacherous two faced villains that sit atop their shiny throne")
+    sprint("Therefore, will you join the side that will bring the treacherous two faced villains that sit atop their shiny throne to ruin")
     WillYouFollowTheWitch = input("""
     Will you follow the witch?
     1 for "Alright,..I will believe in your words and help you,..lets see what the future has in store for us..."
     2 for "No, I do not believe you"
     """)
     if WillYouFollowTheWitch == '1': #pathway 2
-        sprint('"good boy, I shall lead the way, so let us leave this place quickly"')
+        sprint('" I shall lead the way, so let us leave this place quickly"')
         sleep(2)
         print("A space time rift opens up")
         sleep(1)
         print("The residue ofd ancient mana permeates through the air")
         sleep(1)
         print("Dark dreary aura fills you as you walk through")
-        randomnumber = random.randint(1,4)
-        randomuser = int(input("Enter a number from 1 to 4: "))
+        randomnumber = random.randint(1,3)
+        randomuser = int(input("Enter a number from 1 to 3: "))
         if randomnumber == randomuser:
             print("You survived the journey")
             sleep(2)
             sprint("Welcome to the land of revolution. The Demon Kingdom...")
+            from Pathway2 import *
             path_2()
            
         else:
@@ -391,13 +393,15 @@ elif WouldYouLikeToFollowMeInstead == '3': #no more pathway 2, either 1 or 3
 
     WillYouTakeOnThisMission = input('"Will you formally take on this mission Player? Yes or No "\n') #decides pathway 1 or 3
     print(WillYouTakeOnThisMission)
-    if WillYouTakeOnThisMission == 'yes': #you will go on pathway 1
-        sprint('"I must thank you hero, there will certainly be a multitiude of rewards and benefits for you after you complete your mission,... maybe even me.."')
-    
+    if WillYouTakeOnThisMission.lower() == 'yes': #you will go on pathway 1
+        sprint('"I must thank you hero, there will certainly be a multitiude of rewards and benefits for you after you complete your mission,"')
+        sprint("Suddenly you feel yourself drop")
+        sprint("The world twists in your vision and your sight crumbles")
+        sleep(1)
+        sprint("...")
+        from Pathway1 import *
         path_1()
-
-
-    elif WillYouTakeOnThisMission == 'No': #test your luck in pathway 3
+    elif WillYouTakeOnThisMission.lower() == 'no': #test your luck in pathway 3
         sleep(1)
         sprint('"Then may death grasp your soul"')
         sleep(1)
@@ -455,21 +459,22 @@ elif WouldYouLikeToFollowMeInstead == '3': #no more pathway 2, either 1 or 3
         sleep(2)
         sprint("It does not matter, your feelings are not important")
         DoYouHarbourRegretOrVengeanceInYourHeart = input("Do you harbour regret or vengeance in your heart. Yes or No\n") 
-        if DoYouHarbourRegretOrVengeanceInYourHeart == 'Yes': # MAIN SCANERIO 3 you said you have regrets when underworld ruler asked (will lead you to pathway 3)
+        if DoYouHarbourRegretOrVengeanceInYourHeart.lower() == 'yes': # MAIN SCANERIO 3 you said you have regrets when underworld ruler asked (will lead you to pathway 3)
             sleep(2)
             sprint("Through the darkness of the abyss, an even darker aura emerges")
             sleep(1)
             sprint("Torrents of deathly mana rush through the space")
             sprint("A tear, rips through reality and finally,... a voice speaks to you")
             sleep(1)
-            sprint('"We have heard your pleas,..Player"',PlayerName)
+            print('"We have heard your pleas,..Player"',PlayerName)
             sprint('"Your heart has the place for desire, it glows with hatred for the being who caused unjust"')
             sleep(1)
             print("\n")
             print("\n")
-            print("Pathway Three (secret) unlocked")
+            print("Pathway Three (hidden) unlocked")
+            from Pathway3 import *
             path_3()
-        elif DoYouHarbourRegretOrVengeanceInYourHeart == 'No': #you said you have no regrets when underworld ruler asked (will kill you)
+        elif DoYouHarbourRegretOrVengeanceInYourHeart.lower() == 'No': #you said you have no regrets when underworld ruler asked (will kill you)
             sleep(2)
             print("You have made the wrong choice.")
             sleep(1)
@@ -498,5 +503,4 @@ elif WouldYouLikeToFollowMeInstead == '3': #no more pathway 2, either 1 or 3
             exit()
             #dead from pathway 3 after saying u have no regrets
 
-sprint("Congratulations on beating the zombie, it is now time to prove yourself worth with 2 more battles.")
 
