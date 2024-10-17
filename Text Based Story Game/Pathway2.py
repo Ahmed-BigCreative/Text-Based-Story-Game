@@ -174,6 +174,5 @@ def path_2():
                         print("invalid answer")
 
 
-path_2()
 
  

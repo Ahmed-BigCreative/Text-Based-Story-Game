@@ -2,6 +2,10 @@
 from time import sleep
 
 import random
+from Pathway1 import *
+from Pathway2 import *
+import sys,time
+from tkinter import N
 
 input("Press Enter to start the game")
 
@@ -20,18 +24,21 @@ Luck and choices
 """)
 
 
-print("\nYour luck, choices will decide your fate...")
-print("Once dead, you will have to restart,.. good luck..\n")
+print("\nYour luck and choices will decide your fate...")
+print("If you make the wrong choice, You die")
+print("If you die , you restart,.. good luck..")
+print("There are many pathways in this game, which route will you take??..\n")
+
+input("Press Enter to continue..\n\n")
 
 skip = False
-import sys,time
-from tkinter import N
+
 
 def sprint(str):
    for c in str + '\n':
      sys.stdout.write(c)
      sys.stdout.flush()
-     time.sleep(5./90)
+     time.sleep(0./90)   #Hello James and Marten, set it to (0./90) for instant typing, or (3./90) or whatever you like if you need to.
 
 #beginning
 
@@ -56,7 +63,7 @@ sprint("You watch in awe as she glides into the air, floating towards a runelike
 sleep(2)
 sprint('"Wh- Who are you?" you ask, confused with the situation')
 print("\n")
-sprint('"Me?" she says, "My name is Helia Young one, I have been tasked with leading you onto the right path for this new adventure of yours."\n')
+sprint('"Me?" she says, "My name is Helia Young one, I have been tasked with leading you onto the right path "\n')
 PlayerName = input('"What is your name Player"\n')
 print(PlayerName)
 print("\n")
@@ -66,7 +73,8 @@ sprint('"You share the same name as him, but can you live up to his will? "')
 sprint('"We shall witness your fate.."')
 print("\n")
 
-sprint("Suddenly she stops, as she lands onto the shrine, the only construct in the vast white space above the clouds, you can finally see it in its true beauty")
+sprint("Suddenly she stops, as she lands onto the shrine, the only construct in the vast white space above the clouds,")
+sprint("you can finally see it in its true beauty")
 print("\n")
 sprint("It appeared to be old, however its age did not cease its modernised look.")
 sprint("The bricks looked strong, impregnable even, and radiated with a holy aura that threatened to erase any tresspassers.")
@@ -108,7 +116,8 @@ print(R"""
 """)
 
 sleep(1)
-sprint('"By using the power of this holy shrine, the heavens allow to to grant you high rank abilities to aid you in your journey"') 
+sprint('"By using the power of this holy shrine, you can recieve abilities to push through your journey"') 
+sprint('"Eventually, you can defeat your enemies and find the world ticket which will grant you ascendance and a wish."')
 sleep(1)
 sprint('"Which class intrests you the most young one"')
 print("\n")
@@ -119,10 +128,12 @@ Archer
 Mage
 """)
 print("\n")
-sprint('"These are all the base starting classes, after your class evolution you would be able to choose to evolve into a better version of your class for example:"')
-sprint('"A Warrior would be able to become a berserker. There are other class evolutions such as Summoner, Lich, Ranger, Assassain, Necromancer, Jester, Enchanter, Dark Mage and Wizard are all just some of your Class opportunities"')
+sprint('"These are all the base starting classes, after your class evolution you can recieve more skills"')
+sprint('"A Warrior would be able to become a berserker."')
+sprint('"There are other class evolutions such as Summoner, Assassain, Jester, Enchanter, Dark Mage and Wizard"')
 print("\n")
-PlayerChosenClass = input('" Out of all the base classes ( Warrior, Archer, Mage ) Which path will you choose"\n') #the input is to make the game more interactive, but you will recieve hidden tamer class
+PlayerChosenClass = input('" Out of all the base classes ( Warrior, Archer, Mage ) Which path will you choose"\n')
+#the input is to make the game more interactive, but you will recieve hidden tamer class
 sleep(1)
 print('"',PlayerChosenClass,'...? Very well then, I shall do as you wish"')
 sprint('"Let us get on with the ritual"')
@@ -171,14 +182,16 @@ if IsHerbiaReallyThatBad == '1': # ur dead (become stuffed doll)
     sleep(2)
     print("You have made the wrong choice.")
     sleep(2)
-    sprint("Before you embark on your long journey of silence, degradation, silence, boredom, silence, paralysation and silence you lament yourself")
+    sprint("Before you embark on your long journey of silence, degradation, silence, boredom, silence and paralysation")
+    sprint("you lament yourself")
     sleep(1)
     sprint('"Ah, I wish I had made the right decisions"')
     sleep(2)
     print("\n")
     print("You are a failure.")
     sleep(1)
-    sprint("An entity that can literally one tap  you expressed her hate on her opps however you still decide to question her")
+    sprint("An entity that can literally one tap you expressed her hate on her opps,")
+    sprint("however you still decide to question her")
     sleep(1)
     sprint("you are a being of ignorance, one that needed to be removed in order for this world to progress")
     sleep(3)
@@ -215,7 +228,8 @@ elif IsHerbiaReallyThatBad == '2':  # 2 choices, 1= u continue, 2 = u die
         sleep(1)
         sprint('"DARES TO RESPOND IN SUCH ARROGANCE TO ME?"')
         sleep(1)
-        sprint('"A being of such an opulence of stupidity will not make it far regardless....Natural selection would have taken you down anyways"')
+        sprint('"A being of such an opulence of stupidity will not make it far regardless..."')
+        sprint('"Natural selection would have taken you down anyways"')
         sleep(1)
         sprint('"Your stupidity has lead to this"')
         sleep(3)
@@ -228,7 +242,8 @@ elif IsHerbiaReallyThatBad == '2':  # 2 choices, 1= u continue, 2 = u die
         sleep(1)
         sprint("You would respond to an angel with such arrogance and remarks?, It seems some of us have yet to evolve. ")
         sleep(1)
-        sprint("Stupidity has taken ahold of you. If you had been taught some manners maybe you would have survived today.")
+        sprint("Stupidity has taken ahold of you.")
+        sprint("If you had been taught some manners maybe you would have survived today.")
         sleep(3)
         print("\n")
         print("\n")
@@ -240,6 +255,7 @@ elif IsHerbiaReallyThatBad == '2':  # 2 choices, 1= u continue, 2 = u die
 elif IsHerbiaReallyThatBad == '3':
     sprint('"good"')
     sleep(1)
+
     
 
 
@@ -257,7 +273,8 @@ sprint('"Who are you"you whisper back in fear as wicked energy surrounds you')
 sprint('"And where is miss Helia"')
 sleep(1)
 print("\n")
-sprint('"We are seperated for a while. Player, she is tricking you, do not fall for her manipulative poisonous words coated in honey.."the unknown voice says')
+sprint('"We are seperated for a while. Player, she is tricking you,"')
+sprint('"do not fall for her manipulative poisonous words coated in honey.."the unknown voice says"')
 WouldYouLikeToFollowMeInstead = input ("""
 "Would you like to follow me instead"
 1 for "yes"
@@ -299,11 +316,13 @@ elif WouldYouLikeToFollowMeInstead == '2':
     sprint('"They are just mad that a mortal such as myself has managed to ascend to a semi heavenly state"')
     sleep(1)
     print("\n")
-    sprint('"Their grip on power is detestable, the so called good side strikes down anyone with the potential to reach their rank"')
+    sprint('"Their grip on power is detestable"')
+    sprint('"the so called good side strikes down anyone with the potential to reach their rank"')
     sprint('"And someday.. they shall do the same to you"')
     sleep(1)
     print("\n")
-    sprint("Therefore, will you join the side that will bring the treacherous two faced villains that sit atop their shiny throne to ruin")
+    sprint("Therefore, will you join our side,")
+    sprint("the side that will will bring the treacherous two faced villains that sit atop their shiny throne to ruin")
     WillYouFollowTheWitch = input("""
     Will you follow the witch?
     1 for "Alright,..I will believe in your words and help you,..lets see what the future has in store for us..."
@@ -348,7 +367,8 @@ elif WouldYouLikeToFollowMeInstead == '2':
 
                                      
     elif WillYouFollowTheWitch == '2': # u die
-        sprint("It seems that even after questioning me, and having me tell a whole tale , you shall still be rude and reject my invitations.")
+        sprint("It seems that even after questioning me, and having me tell a whole tale , ")
+        sprint("you shall still be rude and reject my invitations.")
         sprint("You do not deserve this life you live, and variables must be removed anyways")
         sprint("Die, pest")
         sleep(3)
@@ -359,7 +379,8 @@ elif WouldYouLikeToFollowMeInstead == '2':
         print("\n")
         print("You really are stupid huh?")
         sleep(1)
-        sprint("You get a heaven level being to explain who they are, their stance and backstory. And you sit like a fool listening to it all, you just reject them?")
+        sprint("You get a heaven level being to explain who they are, their stance and backstory.") 
+        sprint("And you sit like a fool listening to it all, you just reject them?")
         sleep(1)
         sprint("Indecisiveness is a weakness, you would not have mad it far regardless")
         sprint('with your removal, the world becomes a better place')
@@ -391,14 +412,15 @@ elif WouldYouLikeToFollowMeInstead == '3': #no more pathway 2, either 1 or 3
 
 
 
-    WillYouTakeOnThisMission = input('"Will you formally take on this mission Player? Yes or No "\n') #decides pathway 1 or 3
-    print(WillYouTakeOnThisMission)
+    WillYouTakeOnThisMission = input('"Will you formally take on this mission, Player? Yes or No "\n').strip().lower() #decides pathway 1 or 3
     if WillYouTakeOnThisMission.lower() == 'yes': #you will go on pathway 1
-        sprint('"I must thank you hero, there will certainly be a multitiude of rewards and benefits for you after you complete your mission,"')
+        sprint('"I must thank you hero, there will certainly be a multitiude of rewards and benefits for you"')
+        sprint('"Maybe even me.... after you complete your mission though ofcourse"')
         sprint("Suddenly you feel yourself drop")
         sprint("The world twists in your vision and your sight crumbles")
         sleep(1)
         sprint("...")
+        print("\n\n")
         from Pathway1 import *
         path_1()
     elif WillYouTakeOnThisMission.lower() == 'no': #test your luck in pathway 3
@@ -458,8 +480,9 @@ elif WouldYouLikeToFollowMeInstead == '3': #no more pathway 2, either 1 or 3
         HowDoYouFeel = input("How do you feel\n") # useless input
         sleep(2)
         sprint("It does not matter, your feelings are not important")
-        DoYouHarbourRegretOrVengeanceInYourHeart = input("Do you harbour regret or vengeance in your heart. Yes or No\n") 
-        if DoYouHarbourRegretOrVengeanceInYourHeart.lower() == 'yes': # MAIN SCANERIO 3 you said you have regrets when underworld ruler asked (will lead you to pathway 3)
+        DoYouHarbourRegretOrVengeanceInYourHeart = input("Do you harbour regret or vengeance in your heart. Yes or No\n").strip().lower()
+        if DoYouHarbourRegretOrVengeanceInYourHeart.lower() == 'yes': # MAIN SCANERIO 3 you said you have regrets when underworld ruler asked 
+            #(will lead you to pathway 3)
             sleep(2)
             sprint("Through the darkness of the abyss, an even darker aura emerges")
             sleep(1)
@@ -470,10 +493,153 @@ elif WouldYouLikeToFollowMeInstead == '3': #no more pathway 2, either 1 or 3
             sprint('"Your heart has the place for desire, it glows with hatred for the being who caused unjust"')
             sleep(1)
             print("\n")
+            sprint("Here is your chance, for the ticket")
             print("\n")
             print("Pathway Three (hidden) unlocked")
-            from Pathway3 import *
-            path_3()
+            sleep(1)
+            #this is not taken from the net, nor is it copyright or anything like that
+            # this is just part of the book that im making and i thought it would be cool to put it somewhere in the game 
+            # enjoy :)
+            print("Welcome to pathway three, you have not joined a side of the war.")
+            print("Instead, you have unlocked a hidden function of the game.")
+            sleep(1)
+            sprint("From now on, a chaos spirit shall read the beginning of a story to you.")
+            sprint("If you answer his questions at the end correctly, you shall live and recieve your prize; if not.....\nzn")
+            sleep(2)
+
+            sprint("""
+            Two people sat on the edge of a large rock, in the depth of a snake infested cavern.
+            There were tiny insects swarming in the moss beneath them but they didn't seem to mind it.
+            The cave was dull, glowing berries hanging from the ceiling of the deceptively uninhabited cave.
+            Hisses of malice responded to the two visitor’s every move.
+
+
+            The boy sat, extending his long legs. He was fitted with a black cloak that covered the surface of his body
+            ,his face and neck were veiled with a scarf and mask that seemed merged and...moving?
+            All his clothes were dark, and he sat in a way befitting of a emperor. The space he was in seemed warped.
+
+            When looking at him, it was difficult to discern his true height, or build; 
+            Any memorable aspect about him was useless, for his features seemed always everchanging.
+
+
+            Due to this frightening aspect of him, coupled with his infamous deeds and
+            the reputation of his mysterious organisation,
+            that seemed to have emerged out of nowhere, he did have some admirers.
+            However he had many enemies, and masses with deep grudges against him. 
+
+
+            Resting on another edge of the rock, there was a girl who seemed full of radiance.
+            Her hair glistened in the thin moonlight while her royal white clothes that 
+            outlined her curves gracefuly reflected those very rays of light,
+            the silver pattern that layered them shining like rare gemstones. Her name was Sylvia. 
+
+
+            She sat, her face was covered with a beautiful smile that seemed perfect for an angelic face.
+            Her eyes looked deep, as if she was thinking of an important matter.
+
+
+            Yes, soon their world would reset. Again.
+            A time ago, humanity as a whole was thrown into a similar copy of their own world.
+            Except not so similar, this world has beasts, rituals, artifacts, abilities,
+            magic, and an energy that sourced all those things.
+
+            They knew some things, they were currently in a 'repeated tutorial'. After a period of time,
+            the world resets, bringing the people who died from the last tutorial back to life.
+            The goal was to allow humans to gather the maximum amount of knowledge experience they could. But why?
+
+            Today , it would reset again. But today, it was the final time, they were going back to earth.
+
+
+            “No one knows the exact time but it's soon right? The reset." She broke the silence first
+
+            "I guess so” he shrugged
+
+             "We spent so long leading up to where we are now" she said
+
+            "Everything must come to an end"
+
+            He had responded in a way she didn’t like “And it's just gonna go poof" Sylvia continued
+
+            "Mhm" he responded dryly once more
+
+            "Hey can you fucking respond properly, It's like I'm speaking to a rock"
+
+            << The boy shrugs his shoulders >>
+
+            Sylvia: "Come to think of it I've never seen your face, I don't even know your name!"
+            "Those who know of you call you Anubis, and because of that tasteless mask I don't even know what you look like"
+
+            ".."
+
+            Sylvia: "You must have a name right?"
+            "Well if you don't wanna tell me then I'll just go take care of preparations for my Clan"
+
+            << She looks at him hoping for a reaction >>
+
+            "You know, after the countless tutorials humanity braved, a lot of clans were made overtime. 
+            But yours was somehow created instantly, even then it seemed like you decided to remain hidden.
+            The strongest humans all payed attention to this because it was a little weird“
+
+            Anubis: “And? What about it” 
+
+            “What's weirder is that this is the first time you yourself became a thing,
+            you weren’t even part of that organisation before. Its like this is the first tutorial you've done" 
+            she laughs at her own joke but he remains silent.
+
+            "Well, at least take care of your group, the future seems bleak" she utters before leaving
+
+            "We're fine"
+    
+            "Hmph, with that ego you'll have it coming for you one day, and don't expect me to help you" said Sylvia jokingly
+            << She starts to leave >>
+
+            "..."
+            "You said you wanted to see my face right?"
+
+            "Haha so very funny, you've done this joke already" she said sulking
+
+            <<He starts to take off his veils>>
+            << First his cloak, then his scarf, and lastly.. his mask >>
+
+            "What. you do this NOW!!??" 
+            << But inwardly, her heart was beating rapidly, she's always dreamt of this moment >>
+
+            Before he could remove the fabric layering his face, the air itself shook, as if being crushed by an imposing will.
+            The ground quaked, the energy twisted the air, warping its surface with another reality. 
+            Both humans witnessed this miracle together; The first with an energy of nature,
+            very life dwelling in the air around her body.
+
+
+            The second, radiated with an unfathomable aura, one that seemed to overleap itself and collapse.
+            Its energy was contained, multiple threads of his energy existed in one place, 
+            at the same time, one of those exact threads was in a different place, as if existing in two places at ones. 
+            Frankly that was impossible, it said something about the boy...
+
+
+            "Well it seems like I wont be able to show you today" he said laughingly
+
+            "YOU IDIOT"
+            "you knew this would happen didn't you"
+            "Tell  me"
+
+            She rushed towards him hoping to catch him before he disappeared. But it was already too late.
+            "Tell me how you knew"
+            He was gone.
+
+
+            Soon, this mysterious world finished it's reset. 
+            The final tutorial was over, and it was now time to go back to earth, for the real thing.
+            """)
+
+            sleep(1)
+            sprint("What do you think the name of this chapter is called?")
+            userchoice = input("reset, potato, clans: ")
+
+            if userchoice.lower() == 'reset':
+                print("Well done!")
+                sprint("You have unlocked a ticket... Thank you for playing this game.")
+            else: 
+                sprint("Wrong!! :(  ")
         elif DoYouHarbourRegretOrVengeanceInYourHeart.lower() == 'No': #you said you have no regrets when underworld ruler asked (will kill you)
             sleep(2)
             print("You have made the wrong choice.")

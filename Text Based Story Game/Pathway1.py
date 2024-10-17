@@ -57,10 +57,12 @@ I wish you luck.
             self.health = health
             self.max_health = health  # saves the max health
 
+
         def attack(self, target):
             damage = random.randint(16, 25)
             print(f"\n{self.name} uses 'Light Slash' and attacks {target.name} for {damage} damage!")
             target.health -= damage
+
 
     # Class for the zombie
     class Zombie:
@@ -69,10 +71,12 @@ I wish you luck.
             self.health = health
             self.max_health = health  # saves the max health
 
+
         def attack(self, target):
             damage = 10
             print(f"\n{self.name} attacks {target.name} for {damage} damage!")
             target.health -= damage
+
 
         def heal(self):
             heal_amount = random.randint(8, 10)
@@ -81,8 +85,10 @@ I wish you luck.
             self.health += heal_amount
             print(f"{self.name} heals by {heal_amount}!")
 
-    player = Player("Player One", 50)
+
+    player = Player("Hero", 50)
     zombie = Zombie("Zombie", 100)
+
 
     # Start of actual battle with Zombie
     while battle:
@@ -101,17 +107,20 @@ I wish you luck.
                 zombie.heal()
 
         # Display health
-        print(f"\nPlayer Health: {player.health} / {player.max_health}")
+        print(f"\nHero Health: {player.health} / {player.max_health}")
         print(f"Zombie Health: {zombie.health} / {zombie.max_health}")
+
         
         # Adds line to make it look better
         print("---------------------------------------")
+
 
         # Player dead... repeat story
         if player.health <= 0:
             print("You have died... The Angel Helia looks down at you with disgust.")
             battle = False
             exit()
+
 
         # Zombie dead... continue the story
         if zombie.health <= 0:
@@ -136,10 +145,12 @@ I wish you luck.
                     self.health = health
                     self.max_health = health  # saves starting hero health
 
+
                 def attack(self, target):
                     damage = random.randint(18, 30)  # buffed attack of hero
                     print(f"\n{self.name} uses 'Holy Cleave' and attacks {target.name} for {damage} damage!")
                     target.health -= damage
+
 
                 def heal(self):
                     heal_amount = random.randint(10, 20)
@@ -148,6 +159,7 @@ I wish you luck.
                     self.health += heal_amount
                     print(f"The Hero calls upon the angel for healing... his pleas have been heard. Heals by {heal_amount}!")
 
+
             # Class for the Minotaur
             class Minotaur:
                 def __init__(self, name, health):
@@ -155,20 +167,25 @@ I wish you luck.
                     self.health = health
                     self.max_health = health  # was going to make the minatour able to heal too but figured thats too op, however when i remove this line it breaks the code and idk why so i left it
 
+
                 def attack(self, target):
                     damage = random.randint(15, 25)  # Buffed Minotaur attack
                     print(f"\n{self.name} attacks {target.name} for {damage} damage!")
                     target.health -= damage
 
+
                 def defend(self):
                     print(f"{self.name} grasps the darkness, it braces itself for the next attack!")
+
 
             hero = Hero("The Hero", 60)  # made hero stronger
             minotaur = Minotaur("Tainted Minotaur", 120)  
 
+
             # Start of actual battle with Minotaur
             while battle:
                 action = input("\nType 'attack' or 'heal': ").lower()
+
 
                 if action == "attack":
                     hero.attack(minotaur)
@@ -187,8 +204,9 @@ I wish you luck.
                 # shows health
                 print(f"\nHero Health: {hero.health} / {hero.max_health}")
                 print(f"{minotaur.name} Health: {minotaur.health} / {minotaur.max_health}")
+
                 
-                # Adds line to make it look better
+                # Adds line to make it look better/clearer
                 print("---------------------------------------")
 
                 # Hero dead... 
@@ -197,7 +215,7 @@ I wish you luck.
                     battle = False
                     exit()
 
-                # Minotaur has died, 1 more boss
+                # Minotaur has died, 1 more enemy (boss)
                 if minotaur.health <= 0:
                     print("The Tainted Minotaur has been slain... it drops a core of defense. Return to the shrine to evolve.")
                     time.sleep(1)
@@ -225,10 +243,12 @@ I wish you luck.
                             self.health = health
                             self.max_health = health  # saves starting hero health
 
+
                         def attack(self, target):
                             damage = random.randint(20, 35)  #heros damage is strronger now
                             print(f"\n{self.name} uses 'Sun Slash' and attacks {target.name} for {damage} damage!")
                             target.health -= damage
+
 
                         def heal(self):
                             heal_amount = random.randint(15, 25)  
@@ -237,8 +257,10 @@ I wish you luck.
                             self.health += heal_amount
                             print(f"The Hero calls upon the angel for healing... his pleas have been heard. Heals by {heal_amount}!")
 
+
                         def defend(self):
                             print(f"{self.name} raises their shield, channeling holy energy to protect against the next attack!")
+
 
                     # Class for the Dark Serpent
                     class DarkSerpent:
@@ -247,10 +269,12 @@ I wish you luck.
                             self.health = health
                             self.max_health = health  # saves starting serpent health
 
+
                         def attack(self, target):
                             damage = random.randint(25, 40)  
                             print(f"\n{self.name} attacks {target.name} for {damage} damage!")
                             target.health -= damage
+
 
                         def heal(self):
                             heal_amount = random.randint(10, 20)  # healing percentagesof for the serpent
@@ -259,8 +283,10 @@ I wish you luck.
                             self.health += heal_amount
                             print(f"{self.name} absorbs dark energy, healing for {heal_amount}!")
 
+
                         def defend(self):
                             print(f"{self.name} coils around itself, bracing for the next attack!")
+
 
                     hero = Hero("The Hero", 80)  # hero health (buffed)
                     dark_serpent = DarkSerpent("Dark Serpent", 150)  
@@ -302,7 +328,7 @@ I wish you luck.
                             battle = False
                             exit()
 
-                        # Dark Serpent dead... continue the story
+                        # Dark Serpent dead... end story
                         if dark_serpent.health <= 0:
                             print("The Dark Serpent has been slain... it drops a powerful artifact. Return to the shrine to evolve.")
                             sleep(1)
@@ -314,4 +340,3 @@ I wish you luck.
                             sprint("Thank you for playing this game")
                             break
                             exit()
-path_1()
