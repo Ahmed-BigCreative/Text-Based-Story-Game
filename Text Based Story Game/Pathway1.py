@@ -38,13 +38,16 @@ I wish you luck.
 
 - Helia
     """)
+    input("Press Enter to continue")
     print("\n\n")
     time.sleep(3)
     sprint('"Here is your map, sir hero. I shall leave you to it now," he says as he finally leaves.\n\n')
     sleep(1)
     sprint("After making your preparations you follow the map given to you to a dark forest.")
     sprint("Here, you finally see your first target... the undead zombie.")
-    sprint("You rush towards him and your battle system gifted by the angel activates.")
+    input("Press Enter to continue")
+    sprint("You rush towards him and attempt to attack him")
+
 
     # Battle starts
     # For the battle 
@@ -124,12 +127,14 @@ I wish you luck.
 
         # Zombie dead... continue the story
         if zombie.health <= 0:
-            print("The zombie has been slain... it drops a dark core of healing. Return to the shrine to evolve.")
+            print("The zombie has been slain... it drops a dark core of healing. Call upon the shrine to evolve.")
+
             sleep(1)
             print("You call upon the name of the shrine")   
             sleep(1)
             sprint("The stonelike core starts to disappear. \nYou feel a power entering your body... you have evolved.")
             sprint("You have unlocked the power of healing.")
+            input("Press Enter to continue")
             sleep(1)
             sprint("After a little rest, you continue on your path into the maze where the tainted minotaur lives.")
             sleep(1)
@@ -217,12 +222,13 @@ I wish you luck.
 
                 # Minotaur has died, 1 more enemy (boss)
                 if minotaur.health <= 0:
-                    print("The Tainted Minotaur has been slain... it drops a core of defense. Return to the shrine to evolve.")
+                    print("The Tainted Minotaur has been slain... it drops a core of defense. Call upon the shrine to evolve.")
                     time.sleep(1)
-                    print("You call upon the name of the shrine.")   
+                    print("You call upon the name of the shrine.") 
                     time.sleep(1)
                     sprint("The stonelike core starts to disappear. \nYou feel a power entering your body... you have evolved.")
                     sprint("You have unlocked the power of defense.")
+                    input("Press Enter to continue")
                     sleep(1)
                     print("\n\n")
                     sprint("After taking one more rest break you venture onwards to the final enemy..")
@@ -230,9 +236,10 @@ I wish you luck.
                     sleep(1)
                     print("\n")
                     sprint("After many twists and turns you finally eneter a large cavern")
-                    sprint("The hairs on your neck screech and you instinctively summon a holy shielf to protect you")
+                    sprint("The hairs on your neck screech and you instinctively summon a holy shield to protect you")
                     sleep(1)
                     sprint("Just in time... the serpent appears behind you")
+                    input("Press Enter to continue")
                     # Start of fight with the Dark Serpent
                     battle = True
 

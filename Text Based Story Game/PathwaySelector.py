@@ -38,7 +38,7 @@ def sprint(str):
    for c in str + '\n':
      sys.stdout.write(c)
      sys.stdout.flush()
-     time.sleep(5./90)   #Hello James and Marten, set it to (0./90) for instant typing, or (3./90) or whatever you like if you need to.
+     time.sleep(4./90)   #Hello James and Marten, set it to (0./90) for instant typing, or (3./90) or whatever you like if you need to.
 
 #beginning
 

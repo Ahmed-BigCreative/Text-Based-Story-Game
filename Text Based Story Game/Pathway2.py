@@ -1,4 +1,5 @@
 from ctypes.wintypes import ULONG
+import time
 from time import sleep
 import random
 import sys
@@ -20,6 +21,7 @@ def path_2():
     sleep(1)
     sprint("Since you were taken by the witches, you unlock the class 'Shadow Master' instead of your chosen class")
     sprint("Today is the day that you finally head out on your journey to defeat the revolutioners' enemies.")
+    input("Press Enter to continue")
     sleep(1)
     print("\n")
     sprint("...")
@@ -47,8 +49,8 @@ def path_2():
             print(f"You attacked the priest with 'dark torrent' and dealt {playerdmg} damage!")
 
         elif fightchoice == 'defend':
-            defendamount = random.randint(1, 10)  # Damage reduced
-            priestdmg = random.randint(3, 8)      # Damage of priest if you defend
+            defendamount = random.randint(1, 12)  # Damage reduced
+            priestdmg = random.randint(2, 8)      # Damage of priest if you defend
             effective_damage = max(0, priestdmg - defendamount)
             playerhealth -= effective_damage
             print(f"You defended! The priest dealt {effective_damage} damage.")
@@ -57,7 +59,7 @@ def path_2():
             continue  
 
         # Priest attacks if he is still alive (health over 0)
-        if priesthealth > 0:
+        if priesthealth > 0 and fightchoice == 'attack':
             priestdmg = random.randint(5, 10)  # Damage of priest
             playerhealth -= priestdmg
             print(f"The priest attacked you and dealt {priestdmg} damage!")
@@ -70,6 +72,7 @@ def path_2():
         if priesthealth <= 0:
             print("You have defeated the priest! Victory is yours!")
             print("You move on to the next target on your list... the Cathedral Master")
+            input("Press Enter to continue")
             sleep(1)
             print("\n")
             sprint("As you enter a hall, you finally see the Cathedral Master sitting on a chair.")
@@ -90,7 +93,7 @@ def path_2():
                 enemyhealingchance = random.randint(1, 100)
 
                 # Choice between attack or heal
-                fightchoice = input("Will you 'attack' or 'heal'? ").strip().lower()
+                fightchoice = input("Will you 'attack' or 'heal' or 'counter' ? ").strip().lower()
 
                 if fightchoice == 'attack':
                     playerdmg = random.randint(15, 40)  # Player damage
@@ -100,22 +103,47 @@ def path_2():
                     healamount = random.randint(10, 30)  # Amount of health healed
                     playerhealth = min(maxplayerhealth, playerhealth + healamount)  # Prevents healing over max health
                     print(f"You call upon the dark... the energy of the shadows revitalizes you for {healamount} health!")
-
+                elif fightchoice == 'counter':
+                    randomnumber1 = random.randint(1, 15)
+                    randomnumber2 = random.randint(1, 15)
+                    correctanswer = randomnumber1 + randomnumber2
+                    sprint("\nTo build your counter before the Cathedral Master attacks, you have 4 seconds to answer a math equation to build your magic")
+                    sprint("There is a 82% chance the counter will work")
+                    input("Press Enter to continue")
+                    sleep(1)
+                    print(randomnumber1, "+", randomnumber2)
+                    start_time = time.time()
+                    playeranswer = int(input("What is the answer:  "))
+                    end_time = time.time()
+                    time_taken = end_time - start_time
+                    ccounterchance = random.randint(1,100)
+                    if time_taken <5 and playeranswer == correctanswer and ccounterchance >= 18:
+                        print("You have 'full countered' the Cathedral Master")
+                        print("The cathederal master recieves some lashback from his own attack")
+                        clashback = random.randint(1,6)
+                        cathedralmasterhealth -= clashback
+                        print("----------------------------------------------------\n")
+                    elif time_taken >5 or playeranswer != correctanswer or ccounterchance <18: 
+                        print("You have failed to counter the Cathedral Master")
+                        print("The Cathedral Master took advantage of your hesitation and attacked you with 35 damage")
+                        ccathederalmasterdmg = 30
+                        playerhealth -=ccathederalmasterdmg
+                        print("----------------------------------------------------\n")
                 else:
-                    print("Invalid choice, choose between either 'attack' or 'heal'.")
+                    print("Invalid choice, choose between either 'attack' or 'heal' or 'counter' ")
                     continue  
 
                 # Cathedral Master attack damage
-                if cathedralmasterhealth > 0:
-                    cathedralmasterdmg = random.randint(10, 25)  # Damage of the enemy
+                if cathedralmasterhealth > 0 and fightchoice != 'counter':
+                    cathedralmasterdmg = random.randint(10, 35)  # Damage of the enemy
                     playerhealth -= cathedralmasterdmg
                     print(f"The Cathedral Master attacked you with 'Spiritual Wash - Holy' and dealt {cathedralmasterdmg} damage!")
 
                     # Enemy can heal
-                    if enemyhealingchance <= 20:  # 20% chance of healing
+                    if enemyhealingchance <= 20:  # 20% chance of healing with his attack
                         healamount = random.randint(10, 20)
                         cathedralmasterhealth = min(maxcathedralmasterhealth, cathedralmasterhealth + healamount)
-                        print(f"The Cathedral Master calls forth holiness and heals {healamount} health!")
+                        print(f"The Cathedral Master also absorbs holiness in the air and heals {healamount} health!")
 
                     print("----------------------------------------------------------------")
 
@@ -127,6 +155,7 @@ def path_2():
                     print("You have defeated the Cathedral Master! There is one more enemy remaining...")
                     Battle = False
                     sleep(1)
+                    input("Press Enter to continue")
                     sprint("You make your way over to a hidden chamber")
                     sprint("It leads to the sewers, a stinking path, unbefitting of a holy building")
                     print("\n")
@@ -172,7 +201,4 @@ def path_2():
                         sprint("The witches regret taking in a stupid entity")
                     else:
                         print("invalid answer")
-
-
-
  
