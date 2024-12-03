@@ -328,7 +328,7 @@ elif WouldYouLikeToFollowMeInstead == '2':
     1 for "Alright,..I will believe in your words and help you,..lets see what the future has in store for us..."
     2 for "No, I do not believe you"
     """)
-    if WillYouFollowTheWitch == '1': #pathway 2
+    if WillYouFollowTheWitch == '1': #prepathway 2
         sprint('" I shall lead the way, so let us leave this place quickly"')
         sleep(2)
         print("A space time rift opens up")
